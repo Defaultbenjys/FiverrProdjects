@@ -1,0 +1,211 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/PlayerCharacter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/white.png" type="Texture" id=2]
+[ext_resource path="res://Art/BackgroundGrad.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.025, 7.5 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -8.05882, -8, 7.94118, -8, 7.94118, 8, -7.99999, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -8, -8.33334, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 6, -8, 6 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -8.5, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( -8.00783, -8.05788, 7.80005, -8.05231, 8.00781, 8.05789, -8.27098, 8.03632 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 7.93086, -8.03864, 8.06882, 7.96103, -7.93085, 8.03864, -8.0688, -7.96103 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( 8.00008, -7.99999, 7.99994, 8.00001, -7.50006, 7.99999, -7.99992, -8.00001 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( -8, -8, 8.0625, -8.33334, 8.0625, 8.33333, -8, 8 )
+
+[node name="GameScene" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 1 )]
+position = Vector2( 508, 508 )
+z_index = 3
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 505, 594 )
+scale = Vector2( 160, 3 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Ground"]
+texture = ExtResource( 2 )
+
+[node name="Floating" type="StaticBody2D" parent="." groups=["walls"]]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+position = Vector2( 864, 476 )
+scale = Vector2( 17, 3 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating"]
+occluder = SubResource( 2 )
+
+[node name="Floating2" type="StaticBody2D" parent="." groups=["walls"]]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+position = Vector2( 608, 301 )
+scale = Vector2( 20, 3 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating2"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating2"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating2"]
+occluder = SubResource( 3 )
+
+[node name="Floating10" type="StaticBody2D" parent="." groups=["walls"]]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+position = Vector2( 1030, 401 )
+scale = Vector2( 2, 21 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating10"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating10"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating10"]
+occluder = SubResource( 3 )
+
+[node name="Floating3" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 131, 540 )
+scale = Vector2( 2, 5 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating3"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating3"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating3"]
+occluder = SubResource( 4 )
+
+[node name="Floating4" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 771, 429 )
+scale = Vector2( 2, 3 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating4"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating4"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating4"]
+occluder = SubResource( 5 )
+
+[node name="Floating5" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 725, 246 )
+scale = Vector2( 3, 4 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating5"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating5"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating5"]
+occluder = SubResource( 6 )
+
+[node name="Floating8" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 664, 240 )
+rotation = 0.740181
+scale = Vector2( 3, 4 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating8"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating8"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating8"]
+occluder = SubResource( 7 )
+
+[node name="Floating9" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 845, 429 )
+rotation = -1.56433
+scale = Vector2( 3, 4 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating9"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating9"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating9"]
+occluder = SubResource( 8 )
+
+[node name="Floating7" type="StaticBody2D" parent="." groups=["walls"]]
+position = Vector2( 207, 352 )
+rotation = -1.5708
+scale = Vector2( 2, 5 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating7"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating7"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating7"]
+occluder = SubResource( 9 )
+
+[node name="Floating6" type="StaticBody2D" parent="." groups=["walls"]]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+position = Vector2( 131, 392 )
+scale = Vector2( 16, 3 )
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Floating6"]
+position = Vector2( 0.0187502, -0.166656 )
+shape = SubResource( 1 )
+
+[node name="GroundSprite" type="Sprite" parent="Floating6"]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floating6"]
+occluder = SubResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 508, 296 )
+current = true
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 505, 59 )
+scale = Vector2( 2.56, 1.118 )
+z_index = -3
+texture = ExtResource( 3 )
+
+[editable path="PlayerCharacter"]
